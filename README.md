@@ -39,7 +39,7 @@ O projeto está organizado em camadas seguindo o padrão **DDD**:
 ### **Domain**
 
 - **Entities**: Entidades principais como `Microwave` e `HeatingProgram`.
-- **Enums**: Definições de estados e categorias, como `EMicrowaveState` e `ELeadStatus`.
+- **Enums**: Definições de estados e categorias, como `EMicrowaveState`.
 - **Interfaces**: Contratos para comandos e validações.
 - **Models**: Modelos auxiliares como `MicrowaveTask`.
 
