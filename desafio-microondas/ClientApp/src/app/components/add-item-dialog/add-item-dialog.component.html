@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Adicionar Item</h1>
+<div mat-dialog-content>
+  <mat-form-field style="width: 100%;">
+    <input matInput placeholder="Nome" [(ngModel)]="name">
+  </mat-form-field>
+  <mat-form-field style="width: 100%;">
+    <input type="time" matInput placeholder="Segundos" [(ngModel)]="time">
+  </mat-form-field>
+  <mat-form-field style="width: 100%;">
+    <input type="number" min="1" max="10" matInput placeholder="Potencia" [(ngModel)]="power">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button (click)="onAdd()">Adicionar</button>
+</div>

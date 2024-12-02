@@ -1,0 +1,22 @@
+<div class="card-container">
+  <div *ngFor="let item of items$ | async"
+       class="card"
+       (click)="startHeating(item)">
+    <div class="card-content">
+      <p class="card-content__name">{{ item.name }}</p>
+      <p class="card-content__time">{{ item.time }}</p>
+    </div>
+    <div class="card-actions" *ngIf="item.id > 0">
+      <button stop-propagation-directive (click)="delete(item);">Excluir</button>
+    </div>
+    <div class="card-actions card-actions--hidden" *ngIf="item.id <= 0">
+      <button (click)="delete(item);"></button>
+    </div>
+  </div>
+
+  <div class="card card--add" (click)="create()">
+    <div class="card-content">
+      <p>Adicionar</p>
+    </div>
+  </div>
+</div>

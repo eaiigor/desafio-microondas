@@ -1,0 +1,33 @@
+<div class="c-microwave">
+  <div class="c-microwave__door">
+    <div class="c-microwave__door-glass"
+         [ngClass]="{
+        'c-microwave__door-glass--active': state !== stateEnum.Idle
+      }"
+    ></div>
+    <div class="c-microwave__door-handle"></div>
+  </div>
+
+  <div class="c-microwave__body">
+    <div class="c-microwave__heating_programs">
+      <app-heating-program (cardSelected)="startHeatingProgram($event)"></app-heating-program>
+    </div>
+    <div class="c-microwave__body__screen">{{ renderedValue }}</div>
+    <div class="c-microwave__body__buttons">
+      <div class="c-microwave__body__button"
+           [ngClass]="{
+            'c-microwave__body__button--start': button.type === 'start',
+            'c-microwave__body__button--stop': button.type === 'stop',
+           }"
+           (click)="handleButtonClick(button)"
+           *ngFor="let button of buttons">
+        {{ button.display }}
+      </div>
+    </div>
+
+    <div class="c-microwave__body__slider">
+      <label for="power-slider">Potência: {{ power }}</label>
+      <input type="range" id="power-slider" min="1" max="10" [(ngModel)]="power" (change)="handlePowerChange(power)">
+    </div>
+  </div>
+</div>
